@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+    db:
+        image: mysql
+        restart: on-failure
+        volumes:
+            - db-data:/var/lib/mysql
+        environment:
+            MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+
+    phpmyadmin:
+        image: phpmyadmin
+        restart: on-failure
+        depends_on:
+            - db
+        ports:
+            - 8010:80
+        environment:
+            PMA_HOST: db
+
+    web:
+        build: php
+        restart: on-failure
+        volumes:
+            - ./app:/app:rw
+        ports:
+            - 8087:80
+
+volumes:
+    db-data: null
