@@ -40,8 +40,8 @@ $_SESSION['token'] = bin2hex(random_bytes(35));
                             <span class="ligne"> </span>
                         </div>
                         <div class="experience-date">
-                            <p><?= date_format(new DateTime($experience['date_debut']), 'm/y'); ?></p>
-                            <p><?= date_format(new DateTime($experience['date_fin']), 'm/y'); ?></p>
+                            <p><?= date_format(new DateTime($experience['date_debut']), 'm/Y'); ?></p>
+                            <p><?= date_format(new DateTime($experience['date_fin']), 'm/Y'); ?></p>
                         </div>
                         <div class="grid-btn-edit">
                             <a href="/admin/experiences/edit.php?id=<?= $experience['id']; ?>" class="btn btn-light">Modifier</a>

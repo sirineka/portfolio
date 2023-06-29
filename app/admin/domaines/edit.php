@@ -14,7 +14,7 @@ if (!isset($_SESSION['LOGGED_USER']) && $_SESSION['LOGGED_USER']['is_admin'] != 
 $domaine = findAllDomainesById(isset($_GET['id']) ? (int) $_GET['id'] : 0);
 
 if (!$domaine) {
-    $SESSION['messages']['error'] = "Produit non trouvé";
+    $SESSION['messages']['error'] = "domaine non trouvé";
     http_response_code(404);
     header('Location :/admin/domaines');
     exit();
