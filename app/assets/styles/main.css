@@ -493,12 +493,21 @@ select {
 }
 
 /********************************************FORMATIONS**********************************/
+.formations {
+  background-color: #f5c7d7;
+  margin-top: 3em;
+  padding: 1em;
+}
+
+.formations-title {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+
 .display-formations {
   display: block;
-  margin-top: 3em;
-  background-color: #f5c7d7;
-  padding: 2em;
-
 }
 
 .formations-body {
@@ -560,4 +569,55 @@ select {
 h4 {
   color: black;
   margin: 1em;
+}
+
+/**************************************Experiences********************************************************/
+.display-experiences {
+  display: block;
+}
+
+.experiences-body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 2em 0;
+}
+
+.experience-nom {
+  width: 50%;
+  height: 150px;
+  background: #f3e3e8;
+  position: relative;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  text-align: center;
+  border: var(--secondary);
+}
+
+.experience-nom:after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 26px;
+  width: 0;
+  height: 0;
+  border-top: 13px solid transparent;
+  border-left: 26px solid #f3e3e8;
+  border-bottom: 13px solid transparent;
+}
+
+.experience-date {
+  border-radius: 50%;
+  background-color: #0d1137;
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  padding: 2em;
+}
+
+.experience-date p {
+  color: white;
+
 }

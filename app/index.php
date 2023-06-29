@@ -10,6 +10,7 @@ include_once '/app/requests/formations.php'
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage | Portfolio</title>
     <link rel="stylesheet" href="/assets/styles/main.css">
+    <script src="https://kit.fontawesome.com/4de17afbea.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -32,9 +33,12 @@ include_once '/app/requests/formations.php'
                 <div class="div-pourcentage">95%</div>
             </div>
         </section>-->
-        <section>
+        <section class="formations">
+            <div class="formations-title text-center">
+                <i class="fa-sharp fa-solid fa-graduation-cap text-center" style="font-size: 3em; color: var(--primary)"></i>
+                <h1 style="color: var(--secondary); font-size: 3em">Mon parcours</h1>
+            </div>
             <div class="display-formations">
-                <h1 class="text-center" style="color: var(--secondary); font-size: 3em">Mes Formations</h1>
                 <?php foreach (findAllFormationsWithDomaine() as $formation) : ?>
                     <div class="formations-body">
                         <div class="formation-date">
