@@ -1,6 +1,8 @@
 <?php
 session_start();
-include_once '/app/requests/formations.php'
+include_once '/app/requests/formations.php';
+include_once '/app/requests/experiences.php';
+include_once '/app/requests/domaines.php'
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,6 +12,7 @@ include_once '/app/requests/formations.php'
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage | Portfolio</title>
     <link rel="stylesheet" href="/assets/styles/main.css">
+    <script src="https://kit.fontawesome.com/4de17afbea.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -32,9 +35,12 @@ include_once '/app/requests/formations.php'
                 <div class="div-pourcentage">95%</div>
             </div>
         </section>-->
-        <section>
+        <section class="formations" id="formations">
+            <div class="formations-title text-center">
+                <i class="fa-sharp fa-solid fa-graduation-cap text-center" style="font-size: 3em; color: var(--primary)"></i>
+                <h1 style="color: var(--secondary); font-size: 3em">Mon parcours</h1>
+            </div>
             <div class="display-formations">
-                <h1 class="text-center" style="color: var(--secondary); font-size: 3em">Mes Formations</h1>
                 <?php foreach (findAllFormationsWithDomaine() as $formation) : ?>
                     <div class="formations-body">
                         <div class="formation-date">
@@ -53,6 +59,27 @@ include_once '/app/requests/formations.php'
                 <?php endforeach; ?>
             </div>
 
+        </section>
+        <section class="experiences" id="experiences">
+            <div class="formations-title text-center">
+                <i class="fa-sharp fa-solid fa-tractor" style="font-size: 3em; color: #f5c7d7;"></i>
+                <h1 style="color: var(--secondary); font-size: 3em" class="text-center">Mes expériences</h1>
+            </div>
+            <div class="display-experiences">
+                <?php foreach (findAllExperienceWithDomaine() as $experience) : ?>
+                    <div class="experiences-body">
+                        <div class="experience-nom">
+                            <h3 style="color: black;"><?= $experience['poste']; ?></h3>
+                        </div>
+                        <div class="formation-separator">
+                            <span class="ligne"> </span>
+                        </div>
+                        <div class="experience-date">
+                            <p><?= date_format(new DateTime($experience['date_debut']), 'm/Y'); ?></p>
+                            <p><?= date_format(new DateTime($experience['date_fin']), 'm/Y'); ?></p>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
         </section>
     </main>
 
